@@ -11,7 +11,7 @@ const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + 
         } else if (body.error) {
             callback('Unable to find location', undefined)
         } else {//body.daily[0].main
-            callback(undefined,  ' It is currently ' + (body.current.temp-32)*5/6 + ' degress out. There is a ' + body.current.clouds + '% chance of rain.')
+            callback(undefined,  ' It is currently ' + (body.current.temp-273.15) + ' degress out. There is a ' + body.current.clouds + '% chance of rain.')
         }
     })
 }
