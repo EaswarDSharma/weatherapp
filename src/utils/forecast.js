@@ -10,8 +10,8 @@ const url = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latitude + 
             callback('Unable to connect to weather service!', undefined)
         } else if (body.error) {
             callback('Unable to find location', undefined)
-        } else {
-            callback(undefined, body.daily[0].main + ' It is currently ' + body.current.temp + ' degress out. There is a ' + body.current.clouds + '% chance of rain.')
+        } else {//body.daily[0].main
+            callback(undefined,  ' It is currently ' + (body.current.temp-32)*5/6 + ' degress out. There is a ' + body.current.clouds + '% chance of rain.')
         }
     })
 }
